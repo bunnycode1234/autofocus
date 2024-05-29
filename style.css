@@ -1,0 +1,299 @@
+body {
+    font-family: "allstate_sansregular";
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  .text-orange {
+    color: #ba3821;
+  }
+  .text-light-orange {
+    color: #fc9983;
+  }
+  .text-light-blue {
+    color: #45bce5;
+  }
+  .text-dark-blue {
+    color: #0e1941;
+  }
+  .text-blue {
+    color: #0033a0;
+  }
+  .hero-img {
+    background: url(https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/auto-focused/auto-focussed-hero.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    min-height: 380px;
+    background-size: cover;
+  }
+  .navbar-bg-color {
+    background-color: #0033a0;
+  }
+  .left-panel {
+    background-color: #0033a0;
+  }
+  input {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    border-left: 5px solid #ba3821;
+  }
+  .quote-button {
+    background-color: #fc9983;
+    color: #0e1941;
+    border: none;
+    padding: 6px;
+    border-radius: 25px;
+    width: 100%;
+  }
+  .quote-button:hover {
+    background-color: #ffffff;
+  }
+  .card-section {
+    background-color: #f5f5f5;
+    border-left: 5px solid #ba3821;
+    width: 100%;
+  }
+  .card-section-img-right {
+    max-width: 70px;
+  }
+  .card-section-img-left {
+    max-width: 80px;
+  }
+  .footer-band {
+    background-color: #f5f5f5;
+    border-right: 5px solid #ba3821;
+  }
+  .footer-img {
+    max-width: 64px;
+  }
+  .phone-icon {
+    margin-right: 0.4rem !important;
+  }
+  .allstate-logo {
+    width: 120px;
+  }
+  #phoneNumber:hover {
+    text-decoration: underline 1.5px #0033a0;
+  }
+  .footer-link:hover {
+    text-decoration: underline #0033a0;
+  }
+  .sub-heading-text,
+  .right-main-heading {
+    line-height: 1.4em;
+  }
+  
+  .main-heading {
+    font-size: 2.2em;
+  }
+  label {
+    font-family: "allstate_sansbold" !important;
+  }
+  .left-panel {
+    padding-top: 2.5em !important;
+  }
+  
+  .fw-sansbold {
+    font-family: "allstate_sansbold" !important;
+  }
+  .fw-sansmedium {
+    font-family: "allstate_sansmedium" !important;
+  }
+  .fs-10 {
+    font-size: 9px;
+  }
+  .fs-11 {
+    font-size: 11px;
+  }
+  .fs-12 {
+    font-size: 12px;
+  }
+  .fs-13 {
+    font-size: 13px;
+  }
+  .fs-14 {
+    font-size: 14px;
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .card-section-img-right {
+      max-width: 60px !important;
+      margin-left: -12px;
+    }
+    .card-section-img-left {
+      max-width: 60px !important;
+      margin-left: -12px;
+    }
+    .fs-10 {
+      font-size: 10px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    body {
+      height: 100%;
+    }
+    .sub-heading-text {
+      font-size: 1rem !important;
+    }
+    .right-main-heading {
+      font-size: 1.5rem !important;
+    }
+    .footer-img {
+      max-width: 50px;
+    }
+    .footer-text {
+      font-size: 1.1rem !important;
+    }
+    .card-section-img-right {
+      max-width: 70px;
+    }
+    .card-section-img-left {
+      max-width: 70px;
+    }
+    .left-panel > h1 {
+      font-size: 1.8em;
+    }
+  }
+  
+  @media only screen and (min-width: 991px) and (max-width: 1030px) {
+    .main-content-section {
+      padding-right: 1.5rem !important;
+    }
+  }
+  @media only screen and (min-width: 350px) and (max-width: 370px) {
+    .footer-band-logo {
+      padding: 1rem !important;
+    }
+  }
+  
+  @media only screen and (min-width: 1980px) {
+    .hero-img {
+      min-height: 400px;
+    }
+  }
+  @media only screen and (min-width: 2300px) {
+    .hero-img {
+      min-height: 640px;
+    }
+    .card-section > p {
+      font-size: 1.5em !important;
+    }
+    .allstate-logo {
+      width: 200px;
+    }
+    .phone-text {
+      font-size: 2em !important;
+    }
+    #phoneNumber {
+      font-size: 2.5em !important;
+    }
+    .phone-icon {
+      width: 35px !important;
+    }
+    .main-heading {
+      font-size: 3.5em;
+    }
+    .left-panel {
+      padding: 5em !important;
+    }
+    #zipcode {
+      padding: 12px 10px;
+      font-size: 1.3em !important;
+    }
+    .quote-button {
+      padding: 10px 0px;
+      border-radius: 50px;
+      font-size: 1.5em !important;
+      width: 80%;
+    }
+    .right-main-heading {
+      font-size: 3.5em !important;
+    }
+    .main-content-section {
+      padding: 3em !important;
+    }
+    .footer-brand {
+      margin: 3em 0;
+    }
+    .fs-10 {
+      font-size: 0.7em !important;
+    }
+    .mt-5 {
+      margin-top: 5rem !important;
+    }
+    .card-section-img-right {
+      max-width: 80px;
+    }
+    .card-section-img-left {
+      max-width: 90px;
+    }
+  }
+  @media only screen and (min-width: 3000px) {
+    .hero-img {
+      min-height: 720px;
+    }
+    .main-heading {
+      font-size: 3.5em;
+    }
+  }
+  
+  @media only screen and (max-width: 350px) {
+    #phoneNo {
+      font-size: 1em !important;
+    }
+    .phone-icon {
+      width: 14px;
+    }
+    .navbar-brand-img {
+      width: 80px;
+    }
+    .footer-text {
+      font-size: 0.8rem !important;
+    }
+  }
+  
+  @font-face {
+    font-family: "allstate_sansbold";
+    src: url("/resources/Allstate/fonts/allstatesans-bold-webfont.eot");
+    src: url("/resources/Allstate/fonts/allstatesans-bold-webfont.eot?#iefix")
+        format("embedded-opentype"),
+      url("/resources/Allstate/fonts/allstatesans-bold-webfont.woff2") format("woff2"),
+      url("/resources/Allstate/fonts/allstatesans-bold-webfont.woff") format("woff"),
+      url("/resources/Allstate/fonts/allstatesans-bold-webfont.ttf") format("truetype"),
+      url("/resources/Allstate/fonts/allstatesans-bold-webfont.svg#allstate_sansbold")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "allstate_sansmedium";
+    src: url("/resources/Allstate/fonts/allstatesans-medium-webfont.eot");
+    src: url("/resources/Allstate/fonts/allstatesans-medium-webfont.eot?#iefix")
+        format("embedded-opentype"),
+      url("/resources/Allstate/fonts/allstatesans-medium-webfont.woff2") format("woff2"),
+      url("/resources/Allstate/fonts/allstatesans-medium-webfont.woff") format("woff"),
+      url("/resources/Allstate/fonts/allstatesans-medium-webfont.ttf") format("truetype"),
+      url("/resources/Allstate/fonts/allstatesans-medium-webfont.svg#allstate_sansmedium")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "allstate_sansregular";
+    src: url("/resources/Allstate/fonts/allstatesans-regular-webfont.eot");
+    src: url("/resources/Allstate/fonts/allstatesans-regular-webfont.eot?#iefix")
+        format("embedded-opentype"),
+      url("/resources/Allstate/fonts/allstatesans-regular-webfont.woff2") format("woff2"),
+      url("/resources/Allstate/fonts/allstatesans-regular-webfont.woff") format("woff"),
+      url("/resources/Allstate/fonts/allstatesans-regular-webfont.ttf") format("truetype"),
+      url("/resources/Allstate/fonts/allstatesans-regular-webfont.svg#allstate_sansregular")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  

@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script>
+"serviceWorker"in navigator&&"find"in[]&&function(){var e=new Promise(function(e){"complete"===document.readyState||!1?e():(window.addEventListener("load",function(){e()}),setTimeout(function(){"complete"!==document.readyState&&e()},1e4))}),n=window.akamServiceWorkerInvoked,r="1.3.6";if(n)aka3pmLog("akam-setup already invoked");else{window.akamServiceWorkerInvoked=!0,window.aka3pmLog=function(){window.akamServiceWorkerDebug&&console.log.apply(console,arguments)};function o(e){(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"sm.sw.s":e,"sm.sw.v":r}])}var i="/akam-sw.js",a=new Map;navigator.serviceWorker.addEventListener("message",function(e){var n,r,o=e.data;if(o.isAka3pm)if(o.command){var i=(n=o.command,(r=a.get(n))&&r.length>0?r.shift():null);i&&i(e.data.response)}else if(o.commandToClient)switch(o.commandToClient){case"enableDebug":window.akamServiceWorkerDebug||(window.akamServiceWorkerDebug=!0,aka3pmLog("Setup script debug enabled via service worker message"),v());break;case"boomerangMQ":o.payload&&(window.BOOMR_mq=window.BOOMR_mq||[]).push(o.payload)}aka3pmLog("akam-sw message: "+JSON.stringify(e.data))});var t=function(e){return new Promise(function(n){var r,o;r=e.command,o=n,a.has(r)||a.set(r,[]),a.get(r).push(o),navigator.serviceWorker.controller&&(e.isAka3pm=!0,navigator.serviceWorker.controller.postMessage(e))})},c=function(e){return t({command:"navTiming",navTiming:e})},s=null,m={},d=function(){var e=i;return s&&(e+="?othersw="+encodeURIComponent(s)),function(e,n){return new Promise(function(r,i){aka3pmLog("Registering service worker with URL: "+e),navigator.serviceWorker.register(e,n).then(function(e){aka3pmLog("ServiceWorker registration successful with scope: ",e.scope),r(e),o(1)}).catch(function(e){aka3pmLog("ServiceWorker registration failed: ",e),o(0),i(e)})})}(e,m)},g=navigator.serviceWorker.__proto__.register;if(navigator.serviceWorker.__proto__.register=function(n,r){return n.includes(i)?g.call(this,n,r):(aka3pmLog("Overriding registration of service worker for: "+n),s=new URL(n,window.location.href),m=r,navigator.serviceWorker.controller?new Promise(function(n,r){var o=navigator.serviceWorker.controller.scriptURL;if(o.includes(i)){var a=encodeURIComponent(s);o.includes(a)?(aka3pmLog("Cancelling registration as we already integrate other SW: "+s),navigator.serviceWorker.getRegistration().then(function(e){n(e)})):e.then(function(){aka3pmLog("Unregistering existing 3pm service worker"),navigator.serviceWorker.getRegistration().then(function(e){e.unregister().then(function(){return d()}).then(function(e){n(e)}).catch(function(e){r(e)})})})}else aka3pmLog("Cancelling registration as we already have akam-sw.js installed"),navigator.serviceWorker.getRegistration().then(function(e){n(e)})}):g.call(this,n,r))},navigator.serviceWorker.controller){var u=navigator.serviceWorker.controller.scriptURL;u.includes("/akam-sw.js")||u.includes("/akam-sw-preprod.js")||u.includes("/threepm-sw.js")||(aka3pmLog("Detected existing service worker. Removing and re-adding inside akam-sw.js"),s=new URL(u,window.location.href),e.then(function(){navigator.serviceWorker.getRegistration().then(function(e){m={scope:e.scope},e.unregister(),d()})}))}else e.then(function(){window.akamServiceWorkerPreprod&&(i="/akam-sw-preprod.js"),d()});if(window.performance){var w=window.performance.timing,l=w.responseEnd-w.responseStart;c(l)}e.then(function(){t({command:"pageLoad"})});var k=!1;function v(){window.akamServiceWorkerDebug&&!k&&(k=!0,aka3pmLog("Initializing debug functions at window scope"),window.aka3pmInjectSwPolicy=function(e){return t({command:"updatePolicy",policy:e})},window.aka3pmDisableInjectedPolicy=function(){return t({command:"disableInjectedPolicy"})},window.aka3pmDeleteInjectedPolicy=function(){return t({command:"deleteInjectedPolicy"})},window.aka3pmGetStateAsync=function(){return t({command:"getState"})},window.aka3pmDumpState=function(){aka3pmGetStateAsync().then(function(e){aka3pmLog(JSON.stringify(e,null,"\t"))})},window.aka3pmInjectTiming=function(e){return c(e)},window.aka3pmUpdatePolicyFromNetwork=function(){return t({command:"pullPolicyFromNetwork"})})}v()}}();</script>
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script type="text/javascript">
+      var s_account = "allstateglobal";
+      var path = window.location.pathname;
+      path = path.substring(0, path.indexOf("."));
+      var digitalData = {
+        page: {
+          id: path,
+          server: window.location.hostname,
+          channel: "landingpages/lsp",
+          isOverlay: false,
+        },
+      };
+    </script>
+    <script src="https://assets.adobedtm.com/b46e318d845250834eda10c5a20827c045a4d76f/satelliteLib-6c90079b746cf1254ee324cf8f8995d9acc4bc1c.js"></script>
+
+    <style type="text/css">
+      .fieldError {
+        color: red !important;
+        background-color: pink;
+      }
+    </style>
+
+    <title>Auto Focused Page</title>
+  
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"true","rua.cpush":"true","rua.upre":"true","rua.cpre":"true","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-aeb6b1c1-4a28-45d5-ac59-c1fcbaf38be2","rua.cook":"false","rua.ims":"false","rua.ufprl":"true","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="SWYRM-DYMDN-6R5YV-YYJZA-SFQ8Z",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"SWYRM-DYMDN-6R5YV-YYJZA-SFQ8Z",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e="true"=="true"?1:0,t="",n="vrxzp4yxbww2wzq2x57a-f-ce07ae0fb-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"37","ak.cp":"159262","ak.ai":parseInt("106276",10),"ak.ol":"0","ak.cr":228,"ak.ipv":4,"ak.proto":"h2","ak.rid":"12514066","ak.r":41489,"ak.a2":e,"ak.m":"dscx","ak.n":"essl","ak.bpcip":"172.111.151.0","ak.cport":61672,"ak.gh":"23.220.106.136","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1713028990","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==8UELZqq/2owd3TCEg7AhdzW/O2nDslTby7dFsLMwbkrQHj20PFY+A/+mzbKLNmS9BCEjFh2QjjrFY80lbOqy5K1Zgi5xqbVvEPtHkqBvE4R5g2Ej0gwxkQlXvBZjSbPoBNqhJ7Sils7H79Eyil/TkqF6YPQz1Mkvnw8ei2hjBXWQoIHOP4LF279l65eOcMsoi904yjri0/rput2ixpSBTtr/5yuz4MIxznBnzRCJH1m7sRfLPg5s4Zjfk3OVEDDS8RXEq8coDqWn32iSPj0eNR5cxm5Rn+VEbzyTgqZM3tDU+FgobIjGcpbOrB+qPO9YMcIN0TC8vKxfEnO9VMbu+ZDQubGOd15VxqPuUQHr8+Sy/WewsMdb6SmtC+rjaIRafjJ5KBQ9nJZWwxGTOR1Z8J2SZZ2eztxCJ0oxhYJqCxs=","ak.pv":"272","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script><script >bazadebezolkohpepadr="828993879"</script><script type="text/javascript" src="https://www.allstate.com/akam/13/31697284"  defer></script></head>
+  <body>
+    <nav
+      class="d-block d-sm-block d-md-none navbar position-sticky top-0 navbar-expand-lg navbar-bg-color py-0 z-1"
+    >
+      <div class="container-fluid ps-4 pe-sm-4 pe-3 g-0">
+        <a
+          class="navbar-brand"
+          href="https://www.allstate.com/?intcid=ILC-LSP-Auto-Focused:Logo"
+          target="_blank"
+        >
+          <img
+            src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/auto-focused/Allstate-global-logo-white.png"
+            alt="Allstate"
+            width="100px"
+            class="navbar-brand-img"
+          />
+        </a>
+        <div class="text-end py-2 py-3">
+          <p class="text-white mb-1 fs-13">To get a quote by phone, call:</p>
+          <a
+            href="tel:8665591115"
+            onclick="ProcessMetrics('ClicktoTalk', ['LSP|Click To Call']);"
+            class="text-decoration-none d-flex align-items-center justify-content-end text-light-blue"
+          >
+            <img
+              src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/Acq-Road/phone-coral-on-allstateblue.png"
+              alt="phone"
+              width="18px"
+              class="phone-icon"
+            />
+            <span class="phone text-light-orange fs-5 fw-sansbold" id="phoneNo"
+              >18665591115</span
+            >
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="row g-0 h-100">
+      <div class="col-lg-6 col-md-12 col-sm-12 overflow-y-hidden">
+        <div class="hero-img d-none d-sm-none d-md-block"></div>
+        <div class="left-panel px-4 px-sm-4 px-md-5 py-4 h-100 pb-5">
+          <h1 class="text-white fw-sansmedium mb-3 pe-3 pe-sm-0 main-heading">
+            how much can you save
+            <span class="text-light-blue">with Allstate?</span>
+          </h1>
+          <p class="text-white fs-3 pe-3 sub-heading-text">
+            Obtain a price for auto insurance now and evaluate your savings
+          </p>
+          <form id="form" action="javascript:completeAndRedirect()">
+            <div
+              class="row mt-5 align-items-end pe-3 pe-xl-5 pe-lg-0 pe-md-5 pe-sm-5"
+            >
+              <div class="col-lg-4 col-md-5 col-sm-4 col-8 me-4">
+                <label for="zipcode" class="text-white mb-1 w-100"
+                  >Zip code</label
+                >
+                <input
+                  id="zipcode"
+                  type="text"
+                  placeholder="Eg:60062"
+                  onfocus="this.placeholder=''"
+                  onblur="this.placeholder='Eg:60062'"
+                  class="w-100"
+                />
+              </div>
+              <div
+                class="col-lg-5 col-md-5 col-sm-5 col-8 mt-sm-3 mt-4 mt-md-0"
+              >
+                <button
+                  type="submit"
+                  class="quote-button fs-5 fw-sansbold"
+                  onclick="_scLV('Get a quote', 1, 'o');"
+                >
+                  get a quote
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="col-lg-6 col-md-12 col-sm-12 py-4 py-sm-5 ps-4 pe-sm-5 pe-md-5 pe-4 main-content-section"
+      >
+        <div
+          class="ms-0 ms-sm-3 mb-1 align-items-center justify-content-between d-none d-sm-none d-md-flex"
+        >
+          <div>
+            <a
+              href="https://www.allstate.com/?intcid=ILC-LSP-Auto-Focused:Logo"
+              target="_blank"
+            >
+              <img
+                src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/auto-focused/Allstate-blue-logo.png"
+                alt="Allstate"
+                class="allstate-logo"
+              />
+            </a>
+          </div>
+          <div>
+            <p class="mb-0 fs-6 fw-sansmedium text-dark-blue phone-text">
+              To get a quote by phone, call:
+            </p>
+            <a
+              href="tel:8665591115"
+              onclick="ProcessMetrics('ClicktoTalk', ['LSP|Click To Call']);"
+              class="text-decoration-none d-flex align-items-center justify-content-end text-light-blue"
+            >
+              <img
+                src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/Acq-Road/phone-coral-on-white.png"
+                alt="phone"
+                width="19px"
+                class="phone-icon"
+              />
+              <span class="phone text-orange fs-4 fw-sansbold" id="phoneNumber"
+                >19615532114</span
+              >
+            </a>
+          </div>
+        </div>
+        <div class="my-md-5 my-sm-2 my-2 ms-0 ms-sm-3">
+          <h1 class="fw-semibold fs-2 text-dark-blue right-main-heading">
+            drivers saved an
+            <span class="text-orange">average of $468*</span> by switching to
+            Allstate
+          </h1>
+        </div>
+        <div class="row g-0 mt-5 mb-2 ps-lg-3 pe-md-0 pe-lg-3 pe-md-0">
+          <div
+            class="col-md-6 col-sm-12 mb-5 d-flex align-items-center pe-md-3 pe-sm-0 pe-0"
+          >
+            <img
+              src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/Acq-Road/bundle-auto-coral-on-white.png"
+              alt=""
+              class="card-section-img-left"
+            />
+            <div class="card-section px-3 py-3 h-100">
+              <p class="mb-0 fs-13">
+                Bundle your policies to save even more. The more you insure, the
+                more you save.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-sm-12 mb-5 d-flex align-items-center ps-md-3 ps-sm-0 ps-0"
+          >
+            <img
+              src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/Acq-Road/savings-coral-on-white.png"
+              alt=""
+              class="card-section-img-right"
+            />
+            <div class="card-section px-3 py-2 h-100">
+              <p class="mb-0 fs-13">
+                With Allstate, you can pay less when you activate Drivewise®
+                <sup>1</sup>
+                and drive safely
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-sm-12 mb-5 d-flex align-items-center pe-md-3 pe-sm-0 pe-0"
+          >
+            <img
+              src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/Acq-Road/mobile-coral-on-white.png"
+              alt=""
+              class="card-section-img-left"
+            />
+            <div class="card-section px-3 py-2 h-100">
+              <p class="mb-0 fs-13">
+                Save time with the Allstate mobile app. Everything from your
+                bill to proof of insurance is just a tap away. <sup>2</sup>
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-sm-12 mb-5 d-flex align-items-center ps-md-3 ps-sm-0 ps-0"
+          >
+            <img
+              src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/Acq-Road/paying-on-full-coral-on-white.png"
+              alt=""
+              class="card-section-img-right"
+            />
+            <div class="card-section px-3 py-2 h-100">
+              <p class="mb-0 fs-13">
+                Save even more for things like paying on time, paying in full
+                and enrolling in auto pay.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex ms-0 ms-sm-3 footer-brand">
+          <div class="navbar-bg-color p-4 footer-band-logo">
+            <a
+              href="https://www.allstate.com/?intcid=ILC-LSP-Auto-Focused:Logo"
+              target="_blank"
+            >
+              <img
+                src="https://www.allstate.com/resources/Allstate/images/landing-pages/lsp/auto-focused/beacon_line_hands_blue.png"
+                alt="Allstate"
+                class="footer-img"
+              />
+            </a>
+          </div>
+          <div class="footer-band w-100 d-flex align-items-center">
+            <h1 class="fs-3 fw-sansmedium ms-4 ms-sm-5 text-blue footer-text">
+              you’re in good hands®
+            </h1>
+          </div>
+        </div>
+        <div class="ms-0 ms-sm-3 my-4">
+          <p class="fs-10 mb-0">
+            Discounts and coverage subject to terms, conditions, and
+            availability. Savings vary.
+          </p>
+          <p class="fs-10 mb-1">
+            Many factors go into the cost of your auto insurance policy,
+            including how you purchase the policy: online, through a call center
+            or with an agent.
+          </p>
+          <p class="fs-10 mb-1">
+            *National average annual savings based on new auto customers
+            surveyed in 2022 who switched to Allstate.
+          </p>
+          <p class="fs-10 mb-1">
+            1. Drivewise® is optional. Insurance feature is not available in
+            every state. Subject to terms, conditions, and availability.
+            Smartphone and download of Allstate Mobile with activation of
+            Drivewise® required. Savings based on driving behavior and may vary
+            by state. In some states, participation in Drivewise® allows
+            Allstate to use your driving data for purposes of rating. While in
+            some states your rate could increase with high-risk driving, safer
+            drivers will save with Drivewise®.
+          </p>
+          <p class="fs-10 mb-1">
+            2. Electronic proof of insurance not accepted in all states.
+          </p>
+          <p class="fs-10 mb-0">
+            Allstate Fire and Casualty Ins. Co., Allstate Vehicle and Property
+            Ins. Co. & affiliates: 3100 Sanders Rd., Northbrook, IL. ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Allstate Insurance Company. All rights reserved
+          </p>
+        </div>
+        <div class="d-flex align-items-center ms-0 ms-sm-3 mb-sm-4 mb-0">
+          <p class="mb-0 fs-10 footer-link">
+            <a
+              href="http://allstate.com/about/privacy-statement.aspx?intcid=ILC-LSP-Auto-Focused:Privacy"
+              title="privacy &amp; security"
+              target="_blank"
+              class="text-decoration-none text-blue"
+              >Privacy &amp; Security
+            </a>
+          </p>
+          <p class="mb-0 fs-10 ms-4 footer-link">
+            <a
+              class="text-decoration-none text-blue"
+              href="https://www.allstate.com/about/accessibility.aspx"
+              title="web accessibility"
+              target="_blank"
+              >Website Accessibility</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $("#form").submit(function (event) {
+        var zipcode = $("#zipcode").val();
+        var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipcode);
+        if (isValidZip) {
+          return true;
+        } else {
+          $("#zipcode").addClass("fieldError");
+
+          return false;
+        }
+        if (zipcode.length < 4) {
+          $("#zipcode").addClass("fieldError");
+          return false;
+        }
+        if (zipcode.length > 4) {
+          $("#zipcode").removeClass("fieldError");
+        }
+      });
+      $("#zipcode").mouseout(function () {
+        var zipcode = $("#zipcode").val();
+        var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipcode);
+
+        if (zipcode.length > 4 && isValidZip) {
+          $("#zipcode").removeClass("fieldError");
+          return true;
+        }
+      });
+    </script>
+
+    <script type="text/javascript">
+      var tfn = "18665591115";
+      if (tfn.length > 10) {
+        tfn = tfn.substr(tfn.length - 10);
+      }
+      var formattedPhone = tfn.replace(/(\d{3})(\d{3})(\d{4})/, "$1.$2.$3");
+      document.getElementById("phoneNo").innerHTML = formattedPhone;
+    </script>
+
+    <script type="text/javascript">
+      var tfn = "18665591115";
+      if (tfn.length > 10) {
+        tfn = tfn.substr(tfn.length - 10);
+      }
+      var formattedPhone = tfn.replace(/(\d{3})(\d{3})(\d{4})/, "$1.$2.$3");
+      document.getElementById("phoneNumber").innerHTML = formattedPhone;
+    </script>
+
+    <script type="text/javascript" src="/resources/Allstate/scripts/landing-pages/lsp/auto-focused/main.js"></script>
+
+    <script type="text/javascript">
+      (function (i, n, v, o, c, a) {
+        i.InvocaTagId = o;
+        var s = n.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = ("https:" === n.location.protocol ? "https://" : "http://") + v;
+        var fs = n.getElementsByTagName("script")[0];
+        fs.parentNode.insertBefore(s, fs);
+      })(
+        window,
+        document,
+        "solutions.invocacdn.com/js/invoca-latest.min.js",
+        "874/1551979654"
+      );
+    </script>
+
+    <script type="text/javascript">
+      _satellite.pageBottom();
+    </script>
+  <noscript><img src="https://www.allstate.com/akam/13/pixel_31697284?a=dD0xMzIwMzA5YjcwMjZiOTgwYjlmZWQzMGZkMDBlMWRiMDVmZTI4MzQwJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript><script type="text/javascript"  src="/IoAeFG/xm/jG/WGbE/DTacKTAr6Z/7wwEQwQ2zS/U0tsLQE/LB0VKh5/hUlE"></script></body>
+</html>
